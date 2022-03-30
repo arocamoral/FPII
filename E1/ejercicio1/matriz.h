@@ -65,13 +65,13 @@ public:
         if(P.NC==0 && P.NF==0){
             medio << "MATRIZ NULA" << endl;
         }else{
-        for(int i=0;i<P.NF;i++){
-            for(int j=0;j<P.NC;j++){
-                medio << P.M[i][j] << "  ";
+            for(int i=0;i<P.NF;i++){
+                for(int j=0;j<P.NC;j++){
+                    medio << P.M[i][j] << "  ";
+                }
+                medio << endl;
+                medio << endl;
             }
-            medio << endl;
-            medio << endl;
-        }
         }
         return medio;
     }
@@ -86,24 +86,55 @@ public:
     Matriz operator +(const Matriz& P){
         Matriz res(NF,NC);
         if(NF==P.NF && NC==P.NC){
+            cout << "operador suma" << endl;
             for(int i=0;i<NF;i++){
-                res.M[NF][NC]=M[NF][NC]+P.M[NF][NC];
+                for(int i=0;i<NC;i++){
+                    res.M[NF][NC]=M[NF][NC]+P.M[NF][NC];
+                }
             }
+            cout << res << endl;
         }else{
             cout << "NO SUMA" << endl;
         }
         return res;
     }
-//    Matriz operator -(){
-//    }
-//    Matriz operator *(){
-//    }
-//    Matriz operator (){
-//    }
-//    Matriz operator (){
-//    }
-//    Matriz operator (){
-//    }
+    Matriz operator -(const Matriz& P){
+        Matriz res(NF,NC);
+        if(NF==P.NF && NC==P.NC){
+            cout << "operador resta" << endl;
+            for(int i=0;i<NF;i++){
+                for(int i=0;i<NC;i++){
+                    res.M[NF][NC]=M[NF][NC]+P.M[NF][NC];
+                }
+            }
+            cout << res << endl;
+        }else{
+            cout << "NO RESTA" << endl;
+        }
+        return res;
+    }
+    //    Matriz operator *(){
+    //    }
+        bool operator ==(const Matriz& P){
+            bool iguales = false;
+            if(NF==P.NF && NC==P.NC){
+                cout << "operador igualdad" << endl;
+                for(int i=0;i<NF;i++){
+                    for(int i=0;i<NC;i++){
+                        if(M[NF][NC] == P.M[NF][NC]){
+                        iguales = true;
+                        }
+                    }
+                }
+            }else{
+                cout << "DIFERENTES" << endl;
+            }
+            return iguales;
+        }
+    //    Matriz operator (){
+    //    }
+    //    Matriz operator (){
+    //    }
 };
 
 #endif // MATRIZ_H
