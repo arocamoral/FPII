@@ -20,10 +20,8 @@ public:
         NC=0;
         M = NULL;
     }
-    Matriz(Matriz& P){
-        NF=P.NF;
-        NC=P.NC;
-        M = new int* [NF];
+    Matriz(const Matriz& P){
+
         asignarmemoria(P);
     }
     Matriz(int N, int n){
@@ -47,8 +45,13 @@ public:
             delete [] M[i];
         }
         delete [] M;
+        NF = 0;
+        NC = 0;
     }
-    void asignarmemoria(Matriz& P){
+    void asignarmemoria(const Matriz& P){
+        NF=P.NF;
+        NC=P.NC;
+        M = new int* [NF];
         for(int i=0;i<NF;i++){
             M[i] = new int[NC];
         }
@@ -75,62 +78,68 @@ public:
         }
         return medio;
     }
-    Matriz operator =(Matriz& P){
+    Matriz operator =(const Matriz& P){
         DEL();
-        NF=P.NF;
-        NC=P.NC;
-        M = new int* [NF];
         asignarmemoria(P);
         return (*this);
     }
     Matriz operator +(const Matriz& P){
-        Matriz res(NF,NC);
+        Matriz res;
         if(NF==P.NF && NC==P.NC){
             cout << "operador suma" << endl;
+            res = P;
             for(int i=0;i<NF;i++){
-                for(int i=0;i<NC;i++){
-                    res.M[NF][NC]=M[NF][NC]+P.M[NF][NC];
+                for(int j=0;j<NC;j++){
+                    res.M[i][j]+=M[i][j];
                 }
             }
-            cout << res << endl;
-        }else{
-            cout << "NO SUMA" << endl;
         }
         return res;
     }
     Matriz operator -(const Matriz& P){
-        Matriz res(NF,NC);
+        Matriz res;
         if(NF==P.NF && NC==P.NC){
             cout << "operador resta" << endl;
+            res = P;
             for(int i=0;i<NF;i++){
-                for(int i=0;i<NC;i++){
-                    res.M[NF][NC]=M[NF][NC]+P.M[NF][NC];
+                for(int j=0;j<NC;j++){
+                    res.M[i][j]-=M[i][j];
                 }
             }
-            cout << res << endl;
-        }else{
-            cout << "NO RESTA" << endl;
         }
         return res;
     }
-    //    Matriz operator *(){
-    //    }
-        bool operator ==(const Matriz& P){
-            bool iguales = false;
-            if(NF==P.NF && NC==P.NC){
-                cout << "operador igualdad" << endl;
-                for(int i=0;i<NF;i++){
-                    for(int i=0;i<NC;i++){
-                        if(M[NF][NC] == P.M[NF][NC]){
-                        iguales = true;
-                        }
+    Matriz operator *(const Matriz& P){
+        Matriz res(NF,P.NC);
+        if(NC==P.NF){
+            cout << "operador mult" << endl;
+            for(int i=0;i<NF;i++){
+                for(int j=0;j<P.NC;j++){
+                    res.M[i][j] = 0;
+                    for(int h=0;h<NC;h++){
+                        res.M[i][j]+=M[i][h]*P.M[h][j];
                     }
                 }
-            }else{
-                cout << "DIFERENTES" << endl;
             }
-            return iguales;
+        }else{
+            res.DEL();
         }
+        return res;
+    }
+    bool operator ==(const Matriz& P){
+        bool iguales = false;
+        if(NF==P.NF && NC==P.NC){
+            cout << "operador igualdad" << endl;
+            for(int i=0;i<NF;i++){
+                for(int j=0;j<NC;j++){
+                    if(M[i][j] == P.M[i][j]){
+                        iguales = true;
+                    }
+                }
+            }
+        }
+        return iguales;
+    }
     //    Matriz operator (){
     //    }
     //    Matriz operator (){
