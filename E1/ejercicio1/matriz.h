@@ -64,7 +64,7 @@ public:
 
     //////////      //////////      //////////
 
-    friend ostream& operator << (ostream& medio, const Matriz& P){
+    friend ostream& operator <<(ostream& medio, const Matriz& P){
         if(P.NC==0 && P.NF==0){
             medio << "MATRIZ NULA" << endl;
         }else{
@@ -83,10 +83,26 @@ public:
         asignarmemoria(P);
         return (*this);
     }
+    bool operator ==(const Matriz& P){
+        bool condicion = false;
+        if(NF==P.NF && NC==P.NC){
+            condicion = true;
+            for(int i=0;i<NF;i++){
+                for(int j=0;j<NC;j++){
+                    if(M[i][j] != P.M[i][j]){
+                        condicion = false;
+                    }
+                }
+            }
+        }
+        return condicion;
+    }
+    bool operator !=(const Matriz& P){
+        return !(M==P.M);
+    }
     Matriz operator +(const Matriz& P){
         Matriz res;
         if(NF==P.NF && NC==P.NC){
-            cout << "operador suma" << endl;
             res = P;
             for(int i=0;i<NF;i++){
                 for(int j=0;j<NC;j++){
@@ -96,10 +112,21 @@ public:
         }
         return res;
     }
+    Matriz operator +=(const Matriz& P){
+        if(NF==P.NF && NC==P.NC){
+            for(int i=0;i<NF;i++){
+                for(int j=0;j<NC;j++){
+                    M[i][j]+=P.M[i][j];
+                }
+            }
+        }else{
+            cout << "Dimensiones de matrices diferentes" << endl;
+        }
+        return (*this);
+    }
     Matriz operator -(const Matriz& P){
         Matriz res;
         if(NF==P.NF && NC==P.NC){
-            cout << "operador resta" << endl;
             res = P;
             for(int i=0;i<NF;i++){
                 for(int j=0;j<NC;j++){
@@ -109,10 +136,21 @@ public:
         }
         return res;
     }
+    Matriz operator -=(const Matriz& P){
+        if(NF==P.NF && NC==P.NC){
+            for(int i=0;i<NF;i++){
+                for(int j=0;j<NC;j++){
+                    M[i][j]-=P.M[i][j];
+                }
+            }
+        }else{
+            cout << "Dimensiones de matrices diferentes" << endl;
+        }
+        return (*this);
+    }
     Matriz operator *(const Matriz& P){
         Matriz res(NF,P.NC);
         if(NC==P.NF){
-            cout << "operador mult" << endl;
             for(int i=0;i<NF;i++){
                 for(int j=0;j<P.NC;j++){
                     res.M[i][j] = 0;
@@ -126,27 +164,33 @@ public:
         }
         return res;
     }
-    bool operator ==(const Matriz& P){
-        bool iguales = false;
-        if(NF==P.NF && NC==P.NC){
-            cout << "operador igualdad" << endl;
+    Matriz operator *(const int &P){
+        Matriz res(NF,NC);
+        for(int i=0;i<NF;i++){
+            for(int j=0;j<NC;j++){
+                res.M[i][j]=M[i][j]*P;
+            }
+        }
+        return res;
+    }
+    Matriz operator *=(const Matriz& P){
+        Matriz res(NF,P.NC);
+        if(NC==P.NF){
             for(int i=0;i<NF;i++){
-                for(int j=0;j<NC;j++){
-                    if(M[i][j] == P.M[i][j]){
-                        iguales = true;
+                for(int j=0;j<P.NC;j++){
+                    res.M[i][j] = 0;
+                    for(int h=0;h<NC;h++){
+                        res.M[i][j]+=M[i][h]*P.M[h][j];
                     }
                 }
             }
+            //M=res.M;
+        }else{
+            cout << "Dimensiones de matrices incorrectas" << endl;
         }
-        return iguales;
+        return res;
     }
-    //    Matriz operator (){
-    //    }
-    //    Matriz operator (){
-    //    }
+
 };
 
 #endif // MATRIZ_H
-
-
-//para que sirve const

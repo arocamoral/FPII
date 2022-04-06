@@ -2,25 +2,27 @@
 
 int main (){
     srand (time(NULL));
-    Matriz A,B(A),C(1,2);
+    Matriz A,B(A),C(4,3);
     Matriz D(2,3);
+    int T=2;
 
 
-    //cout << C << endl << D << "FIN" << endl;
+    //cout << C << endl << D << endl;
     //D = C;
-    A = C * D;
+    A = C * T;
+    //A = C * D;
 
-//    bool aux = D == C;
+//    bool aux = D != C;
+//    cout << aux << endl;
 //    if(aux == true){
-//        cout << "SON IGUALES" << endl;
+//        cout << "CIERTO" << endl;
 //    }else{
-//        cout << "DIFERENTES" << endl;
+//        cout << "FALSO" << endl;
 //    }
-    cout << C << endl << D << endl << A << endl;
+    cout << C << endl << T << endl << A << endl;
     return 0;
 }
 
 
-
-// =+ no devuelve resultado, void, se vuelca en A
-// != es !(A==B) literalmente, booleanos
+// !(A==B) no reconoce ==
+//operador *= doesn't work
