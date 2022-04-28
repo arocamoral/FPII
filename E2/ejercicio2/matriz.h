@@ -6,9 +6,10 @@
 #include <time.h>
 using namespace std;
 
+template <class T>
 class Matriz{
 protected:
-    int **M;
+    T **M;
     int NF,NC;
 public:
     ~Matriz(){
@@ -25,19 +26,22 @@ public:
     Matriz(int N, int n){
         NF = N;
         NC = n;
-        M = new int*[NF];
+        M = new T*[NF];
         for(int i=0;i<NF;i++){
-            M[i] = new int[NC];
+            M[i] = new T[NC];
         }
-        for(int i=0;i<NF;i++){
-            for(int j=0;j<NC;j++){
-                M[i][j] = rand()% 10;
-            }
-        }
+        introducirdatos();
     }
 
     //////////      //////////      //////////
 
+    void introducirdatos(){
+        for(int i=0;i<NF;i++){
+            for(int j=0;j<NC;j++){
+                M[i][j] = rand()%10;
+            }
+        }
+    }
     void DEL(){
         for(int i=0;i<NF;i++){
             delete [] M[i];
@@ -49,9 +53,9 @@ public:
     void asignarmemoria(const Matriz& P){
         NF=P.NF;
         NC=P.NC;
-        M = new int* [NF];
+        M = new T* [NF];
         for(int i=0;i<NF;i++){
-            M[i] = new int[NC];
+            M[i] = new T[NC];
         }
         for(int i=0;i<NF;i++){
             for(int j=0;j<NC;j++){
@@ -63,6 +67,7 @@ public:
     //////////      //////////      //////////
 
     friend ostream& operator <<(ostream& medio, const Matriz& P){
+        //medio << "Imprimir" << endl;
         if(P.NC==0 && P.NF==0){
             medio << "MATRIZ NULA" << endl;
         }else{
@@ -99,9 +104,9 @@ public:
         }
         return condicion;
     }
-//    bool operator !=(const Matriz& P){
-//        return !(M==P.M);
-//    }
+    //    bool operator !=(const Matriz& P){
+    //        return !(M==P.M);
+    //    }
     Matriz operator +(const Matriz& P){
         Matriz res;
         if(NF==P.NF && NC==P.NC){
@@ -157,7 +162,7 @@ public:
                 for(int j=0;j<P.NC;j++){
                     res.M[i][j] = 0;
                     for(int h=0;h<NC;h++){
-                        res.M[i][j]+=M[i][h]*P.M[h][j];
+                        res.M[i][j]+=(M[i][h]*P.M[h][j]);
                     }
                 }
             }
@@ -175,64 +180,68 @@ public:
         }
         return res;
     }
-//    Matriz operator *=(const Matriz& P){
-//        Matriz res(NF,P.NC);
-//        if(NC==P.NF){
-//            for(int i=0;i<NF;i++){
-//                for(int j=0;j<P.NC;j++){
-//                    res.M[i][j] = 0;
-//                    for(int h=0;h<NC;h++){
-//                        res.M[i][j]+=M[i][h]*P.M[h][j];
-//                    }
-//                }
-//            }
-//            //M=res.M;
-//        }else{
-//            cout << "Dimensiones de matrices incorrectas" << endl;
-//        }
-//        return res;
-//    }
+    //    Matriz operator *=(const Matriz& P){
+    //        Matriz res(NF,P.NC);
+    //        if(NC==P.NF){
+    //            for(int i=0;i<NF;i++){
+    //                for(int j=0;j<P.NC;j++){
+    //                    res.M[i][j] = 0;
+    //                    for(int h=0;h<NC;h++){
+    //                        res.M[i][j]+=M[i][h]*P.M[h][j];
+    //                    }
+    //                }
+    //            }
+    //            //M=res.M;
+    //        }else{
+    //            cout << "Dimensiones de matrices incorrectas" << endl;
+    //        }
+    //        return res;
+    //    }
 
 };
 
-class MatrizT:public Matriz{
+template <class T>
+class MatrizT:public Matriz<T>{
 public:
-    MatrizT(int A):Matriz(A, A){
+    MatrizT(int A):Matriz<T>(A, A){
         if(A>2){
-        for(int i=0;i<A-2;i++){
-            for(int j=i+2;j<A;j++){
-                M[i][j] = 0;
-                M[j][i] = 0;
+            for(int i=0;i<A-2;i++){
+                for(int j=i+2;j<A;j++){
+                    Matriz<T>::M[i][j] = 0;
+                    Matriz<T>::M[j][i] = 0;
+                }
             }
-        }
         }
     }
 };
 
-class MatrizD:public MatrizT{
+template <class T>
+class MatrizD:public MatrizT<T>{
 public:
-    MatrizD(int A):MatrizT(A){
+    MatrizD(int A):MatrizT<T>(A){
         for(int i=0;i<A-1;i++){
             for(int j=i+1;j<i+2;j++){
-                M[i][j] = 0;
-                M[j][i] = 0;
+                MatrizT<T>::M[i][j] = 0;
+                MatrizT<T>::M[j][i] = 0;
             }
         }
     }
 };
 
-class MatrizE:public MatrizD{
+template <class T>
+class MatrizE:public MatrizD<T>{
 public:
-    MatrizE(int A):MatrizD(A){
+    MatrizE(int A):MatrizD<T>(A){
         int aux = rand()% 10;
-        for(int i=0;i<A;i++) M[i][i] = aux;
+        for(int i=0;i<A;i++) MatrizD<T>::M[i][i] = aux;
     }
 };
 
-class MatrizI:public MatrizE{
+template <class T>
+class MatrizI:public MatrizE<T>{
 public:
-    MatrizI(int A):MatrizE(A){
-        for(int i=0;i<A;i++) M[i][i] = 1;
+    MatrizI(int A):MatrizE<T>(A){
+        for(int i=0;i<A;i++) MatrizE<T>::M[i][i] = 1;
     }
 };
 

@@ -2,27 +2,20 @@
 
 int main (){
     srand (time(NULL));
-    Matriz A,B(A),C(4,3);
-    Matriz D(2,3);
-    int T=2;
 
+    //////////      //////////      //////////
 
-    //cout << C << endl << D << endl;
-    //D = C;
-    A = C * T;
-    //A = C * D;
+    Matriz M(4,5);
+     MatrizD D(4);
+     MatrizT T(4);
+     MatrizE E(5);
+     cout<<"T=\n"<<T<<"D=\n"<<D<<"M=\n"<<M<<"E=\n"<<E;
+     cout<<"(T+D)*M*E = "<<endl<<(T+D)*M*E;
+     MatrizI I1(4),I2(5);
+     if(I1*M*I2==M) cout<<"Producto correcto"<<endl;
+     else cout<<"Algo ha ido mal"<<endl;
 
-//    bool aux = D != C;
-//    cout << aux << endl;
-//    if(aux == true){
-//        cout << "CIERTO" << endl;
-//    }else{
-//        cout << "FALSO" << endl;
-//    }
-    cout << C << endl << T << endl << A << endl;
     return 0;
 }
 
-
-// !(A==B) no reconoce ==
-//operador *= doesn't work
+//hacer destructores
