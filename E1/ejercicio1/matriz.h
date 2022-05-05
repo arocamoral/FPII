@@ -99,9 +99,20 @@ public:
         }
         return condicion;
     }
-//    bool operator !=(const Matriz& P){
-//        return !(M==P.M);
-//    }
+    bool operator !=(const Matriz& P){
+        bool condicion = false;
+        if(NF==P.NF && NC==P.NC){
+            condicion = true;
+            for(int i=0;i<NF;i++){
+                for(int j=0;j<NC;j++){
+                    if(M[i][j] != P.M[i][j]){
+                        condicion = false;
+                    }
+                }
+            }
+        }
+        return !condicion;
+    }
     Matriz operator +(const Matriz& P){
         Matriz res;
         if(NF==P.NF && NC==P.NC){
@@ -175,36 +186,18 @@ public:
         }
         return res;
     }
-//    Matriz operator *=(const Matriz& P){
-//        Matriz res(NF,P.NC);
-//        if(NC==P.NF){
-//            for(int i=0;i<NF;i++){
-//                for(int j=0;j<P.NC;j++){
-//                    res.M[i][j] = 0;
-//                    for(int h=0;h<NC;h++){
-//                        res.M[i][j]+=M[i][h]*P.M[h][j];
-//                    }
-//                }
-//            }
-//            //M=res.M;
-//        }else{
-//            cout << "Dimensiones de matrices incorrectas" << endl;
-//        }
-//        return res;
-//    }
-
 };
 
 class MatrizT:public Matriz{
 public:
     MatrizT(int A):Matriz(A, A){
         if(A>2){
-        for(int i=0;i<A-2;i++){
-            for(int j=i+2;j<A;j++){
-                M[i][j] = 0;
-                M[j][i] = 0;
+            for(int i=0;i<A-2;i++){
+                for(int j=i+2;j<A;j++){
+                    M[i][j] = 0;
+                    M[j][i] = 0;
+                }
             }
-        }
         }
     }
 };
