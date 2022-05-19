@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>471</width>
+    <height>418</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pB_1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof00.jpg</normaloff>:/Material Ejercicio 1/dof00.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>20</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof10.jpg</normaloff>:/Material Ejercicio 1/dof10.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_3">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>20</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof20.jpg</normaloff>:/Material Ejercicio 1/dof20.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_4">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>20</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof30.jpg</normaloff>:/Material Ejercicio 1/dof30.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof01.jpg</normaloff>:/Material Ejercicio 1/dof01.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_6">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>100</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof11.jpg</normaloff>:/Material Ejercicio 1/dof11.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_7">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>100</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof21.jpg</normaloff>:/Material Ejercicio 1/dof21.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_8">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>100</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof31.jpg</normaloff>:/Material Ejercicio 1/dof31.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_9">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof02.jpg</normaloff>:/Material Ejercicio 1/dof02.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_10">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>180</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof12.jpg</normaloff>:/Material Ejercicio 1/dof12.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_11">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>180</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof22.jpg</normaloff>:/Material Ejercicio 1/dof22.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_12">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>180</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof32.jpg</normaloff>:/Material Ejercicio 1/dof32.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_13">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof03.jpg</normaloff>:/Material Ejercicio 1/dof03.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_15">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>260</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof23.jpg</normaloff>:/Material Ejercicio 1/dof23.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_14">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>260</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof13.jpg</normaloff>:/Material Ejercicio 1/dof13.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_16">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>260</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/Material Ejercicio 1/dof33.jpg</normaloff>:/Material Ejercicio 1/dof33.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>471</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCargar"/>
+   <addaction name="actionDesordenar"/>
+   <addaction name="actionAbout"/>
+   <addaction name="actionSalir"/>
+  </widget>
+  <action name="actionCargar">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/Material Ejercicio 1/disk.png</normaloff>:/Material Ejercicio 1/disk.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cargar</string>
+   </property>
+  </action>
+  <action name="actionDesordenar">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/Material Ejercicio 1/restart.png</normaloff>:/Material Ejercicio 1/restart.png</iconset>
+   </property>
+   <property name="text">
+    <string>Desordenar</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/Material Ejercicio 1/about.png</normaloff>:/Material Ejercicio 1/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/Material Ejercicio 1/exit.png</normaloff>:/Material Ejercicio 1/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
+ <connections/>
+</ui>
