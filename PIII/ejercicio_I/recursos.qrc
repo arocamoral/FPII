@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Material Ejercicio 1/about.png</file>
+        <file>Material Ejercicio 1/disk.png</file>
+        <file>Material Ejercicio 1/exit.png</file>
+        <file>Material Ejercicio 1/restart.png</file>
+        <file>Material Ejercicio 1/dof00.jpg</file>
+        <file>Material Ejercicio 1/dof01.jpg</file>
+        <file>Material Ejercicio 1/dof02.jpg</file>
+        <file>Material Ejercicio 1/dof03.jpg</file>
+        <file>Material Ejercicio 1/dof10.jpg</file>
+        <file>Material Ejercicio 1/dof11.jpg</file>
+        <file>Material Ejercicio 1/dof12.jpg</file>
+        <file>Material Ejercicio 1/dof13.jpg</file>
+        <file>Material Ejercicio 1/dof20.jpg</file>
+        <file>Material Ejercicio 1/dof21.jpg</file>
+        <file>Material Ejercicio 1/dof22.jpg</file>
+        <file>Material Ejercicio 1/dof23.jpg</file>
+        <file>Material Ejercicio 1/dof30.jpg</file>
+        <file>Material Ejercicio 1/dof31.jpg</file>
+        <file>Material Ejercicio 1/dof32.jpg</file>
+        <file>Material Ejercicio 1/dof33.jpg</file>
+        <file>Material Ejercicio 1/Doofenshmirtz.jpg</file>
+        <file>Material Ejercicio 1/click.wav</file>
+        <file>Material Ejercicio 1/correct.wav</file>
+        <file>Material Ejercicio 1/incorrect.wav</file>
+        <file>Material Ejercicio 1/win.wav</file>
+    </qresource>
+</RCC>
