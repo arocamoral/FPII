@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Material Ejercicio 2/about.png</file>
+        <file>Material Ejercicio 2/bw.png</file>
+        <file>Material Ejercicio 2/disk.png</file>
+        <file>Material Ejercicio 2/Doofenshmirtz.jpg</file>
+        <file>Material Ejercicio 2/exit.png</file>
+        <file>Material Ejercicio 2/horizontal.png</file>
+        <file>Material Ejercicio 2/vertical.png</file>
+    </qresource>
+</RCC>

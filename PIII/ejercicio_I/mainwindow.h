@@ -76,4 +76,5 @@ private:
 #endif // MAINWINDOW_H
 
 
-//Estas opciones ser n accesibles tanto por el men£ como por la barra de herramientas del programa
+//Estas opciones ser n accesibles tanto por el men£ como por la barra de herramientas del programa: escribir arriba
+//hacer codigo de felicitacion
